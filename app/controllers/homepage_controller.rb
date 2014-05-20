@@ -6,6 +6,7 @@ class HomepageController < ApplicationController
   end
 
   def main
+    @users = User.all
   end
 
   def contact

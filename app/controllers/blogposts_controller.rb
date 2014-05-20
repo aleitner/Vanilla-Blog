@@ -2,6 +2,8 @@ class BlogpostsController < ApplicationController
   before_action :set_blogpost, only: [:show, :edit, :update, :destroy]
   # GET /blogposts
   # GET /blogposts.json
+  before_filter :authenticate_user!
+  
   def index
     @blogposts = Blogpost.all
   end
@@ -78,6 +80,6 @@ class BlogpostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blogpost_params
-      params.require(:blogpost).permit(:content, :comment_id, :user_id)
+      params.require(:blogpost).permit(:content, :comment_id, :user_id, :comment_count)
     end
 end
