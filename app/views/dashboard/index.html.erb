@@ -1,0 +1,10 @@
+<h1>Posts</h1>
+<%= link_to 'New Blogpost', new_blogpost_path %>
+<p>+=+=+=+=+=+=+=</p>
+
+<%@blogposts.each do |blogpost|%>
+<table class="table table-hover table-condensed">
+	<td><b><%=blogpost.user.email%></b><br>
+	<%=blogpost.content%><br><font size = 1><a href=/dashboard/main/?blogpost_id=<%=blogpost.id%>>Comment (<%="#{blogpost.comment_count}"%>)</font></td>
+</table>
+<%end%>
