@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
+  include BlogpostsHelper
+
   # GET /comments
   # GET /comments.json
   def index
@@ -14,6 +16,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+
     @comment = Comment.new
   end
 
@@ -25,10 +28,14 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @blogpost_id = params[:blogpost_id]
 
     respond_to do |format|
+
     @comment.user_id = current_user.id
+
       if @comment.save
+        comment_counter @comment.blogpost_id
         @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
@@ -43,7 +50,14 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1.json
   def update
     respond_to do |format|
+
+      old_id = @comment.blogpost_id
+
       if @comment.update(comment_params)
+
+        comment_counter old_id
+        comment_counter @comment.blogpost_id
+
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
       else
@@ -56,7 +70,13 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
+
+    blogpost_id = @comment.blogpost_id
+
     @comment.destroy
+
+    comment_counter blogpost_id
+
     respond_to do |format|
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }

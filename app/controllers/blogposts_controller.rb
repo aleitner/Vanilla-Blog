@@ -11,6 +11,14 @@ class BlogpostsController < ApplicationController
   def show
   end
 
+  def mass_comment_count
+    blogposts = Blogpost.all
+    blogposts.each do |blogpost|
+      comment_counter blogpost.id
+    end
+  end
+
+
   # GET /blogposts/new
   def new
     @blogpost = Blogpost.new
