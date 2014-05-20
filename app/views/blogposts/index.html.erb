@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Content</th>
-      <th>Comment</th>
       <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +13,6 @@
     <% @blogposts.each do |blogpost| %>
       <tr>
         <td><%= blogpost.content %></td>
-        <td><%= blogpost.comment_id %></td>
         <td><%= blogpost.user_id %></td>
         <td><%= link_to 'Show', blogpost %></td>
         <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>

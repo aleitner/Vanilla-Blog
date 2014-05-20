@@ -1,6 +1,6 @@
 class HomepageController < ApplicationController
-  def about
-  end
+
+  include HomepageHelper
 
   def index
   end
