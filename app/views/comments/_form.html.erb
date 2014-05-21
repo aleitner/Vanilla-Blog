@@ -22,7 +22,11 @@
   </div>
 
   <div class="field">
-    <%= f.hidden_field :blogpost_id, :value => params[:blogpost_id] %><br>
+    <%if params[:blogpost_id] == nil%>
+      <%= f.hidden_field :blogpost_id, :value => @blogpost_id %><br>
+    <%else%>
+      <%= f.hidden_field :blogpost_id, :value => params[:blogpost_id] %><br>
+    <%end%>
   </div>
 
   <div class="actions">

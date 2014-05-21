@@ -10,6 +10,7 @@
 	<table class="table table-hover table-condensed">
 	<td><b><%=comment.user.email%></b><br>
 	<%=comment.content%><br>
+	<%= link_to 'Edit', edit_comment_path(comment) %>
 	</table>
 <%end%>
 <br>
@@ -17,4 +18,3 @@
 <%@blogpost.each do |blogpost|%>
 <a href=/comments/new?blogpost_id=<%=blogpost.id%>>New Comment</a>
 <%end%>
-

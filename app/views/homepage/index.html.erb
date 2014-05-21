@@ -1,5 +1,7 @@
 <h1>Homepage#index</h1>
 <p>Find me in app/views/homepage/index.html.erb</p>
+<% if user_signed_in? %>
+<% else %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
@@ -14,3 +16,4 @@
 
   <div><%= f.submit "Sign in" %></div>
 <% end %>
+<% end %>	

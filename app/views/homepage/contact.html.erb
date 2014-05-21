@@ -1,2 +1,28 @@
 <h1>Homepage#contact</h1>
 <p>Find me in app/views/homepage/contact.html.erb</p>
+
+<script type="text/javascript">
+	function loadBlogposts(){
+		$.getJSON("/blogposts.json", function(data){
+			console.log(data);
+
+			var html ="";
+
+			$.each(data, function (index){
+
+				html += "<b>" + data[index].content +"</b><br><br>"
+				//alert(data[index].content);
+
+			});
+
+			$('#blogposts').html(html);
+		});
+	}
+
+
+	</script>
+<div id="blogposts" name="blogposts">
+	<a href="javascript:loadBlogposts();">
+		This is where blog posts go</a>
+</div>
+

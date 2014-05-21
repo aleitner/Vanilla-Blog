@@ -17,12 +17,13 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-
     @comment = Comment.new
+    @blogpost_id = params[:blogpost_id]
   end
 
   # GET /comments/1/edit
   def edit
+    @blogpost_id = @comment.blogpost_id
   end
 
   # POST /comments
