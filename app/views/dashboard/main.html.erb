@@ -10,7 +10,10 @@
 	<table class="table table-hover table-condensed">
 	<td><b><%=comment.user.email%></b><br>
 	<%=comment.content%><br>
-	<%= link_to 'Edit', edit_comment_path(comment) %>
+	<%if current_user.id == comment.user_id %>
+		<%= link_to 'Edit', edit_comment_path(comment) %>
+	<%else%>
+	<%end%>
 	</table>
 <%end%>
 <br>

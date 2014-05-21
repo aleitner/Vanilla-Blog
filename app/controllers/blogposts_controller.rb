@@ -3,6 +3,8 @@ class BlogpostsController < ApplicationController
   # GET /blogposts
   # GET /blogposts.json
   before_filter :authenticate_user!
+
+  include BlogpostsHelper
   
   def index
     @blogposts = Blogpost.all
@@ -66,8 +68,14 @@ class BlogpostsController < ApplicationController
   # DELETE /blogposts/1.json
   def destroy
     @blogpost.destroy
+
+    @comments = Comment.where(blogpost: @blogpost.id)
+      @comments.each do |comment|
+        comment.destroy
+      end
+
     respond_to do |format|
-      format.html { redirect_to blogposts_url, notice: 'Blogpost was successfully destroyed.' }
+      format.html { redirect_to dashboard_index_path, notice: 'Blogpost was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

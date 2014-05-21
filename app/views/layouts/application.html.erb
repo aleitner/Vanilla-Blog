@@ -27,9 +27,10 @@
         <span class="icon-bar"></span>
       </button>
       <% if user_signed_in? %>
-      <a class="navbar-brand" href="/dashboard/index/">Vanilla Blog</a>
+      <a class="navbar-brand" href="/dashboard/index/">
+        <%=image_tag("icecream.gif")%>Vanilla Blog</a>
       <% else %>
-            <a class="navbar-brand" href="/homepage/index/">Vanilla Blog</a>
+            <a class="navbar-brand" href="/homepage/index/"><%=image_tag("icecream.gif")%>Vanilla Blog</a>
       <% end %>
     </div>
 
