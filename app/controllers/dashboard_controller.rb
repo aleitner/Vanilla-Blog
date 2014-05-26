@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 	
   def index
-  	@blogposts = Blogpost.all
+  	@blogposts = Blogpost.order('created_at DESC').all
   end
 
   def main

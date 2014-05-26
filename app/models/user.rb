@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :user_name
+  validates_uniqueness_of :user_name
 
    def full_name
    	"#{first_name} #{last_name}"

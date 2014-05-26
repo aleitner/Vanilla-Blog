@@ -1,20 +1,9 @@
+<div class="jumbotron">
+		<h1>Welcome to Vanilla Blog!</h1>
+	<p>A clean and simple way to chat</p
+	 <p><a href="/users/sign_up/" class="btn btn-primary btn-lg" role="button">Sign up</a></p>	
 
-		<h1>Homepage#index</h1>
-	<p>Find me in app/views/homepage/index.html.erb</p>
-	<% if user_signed_in? %>
-	<% else %>
 
-	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	  <div><%= f.label :email %><br />
-	  <%= f.email_field :email, autofocus: true %></div>
 
-	  <div><%= f.label :password %><br />
-	    <%= f.password_field :password, autocomplete: "off" %></div>
 
-	  <% if devise_mapping.rememberable? -%>
-	    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-	  <% end -%>
-
-	  <div><%= f.submit "Sign in" %></div>
-	<% end %>
-	<% end %>	
+</div>

@@ -1,6 +1,6 @@
 <%@blogpost.each do |blogpost|%>
 	<table class="table table-hover table-condensed">
-	<td><b><%=blogpost.user.email%></b><br>
+	<td><b><%=blogpost.user.user_name%></b><br>
 	<%=blogpost.content%><br>
 		<% if current_user.id == blogpost.user_id%>
 		<%= link_to 'Edit', edit_blogpost_path(blogpost) %>
@@ -12,7 +12,7 @@
 <h2>Comments</h3>
 <%@comments.each do |comment|%>
 	<table class="table table-hover table-condensed">
-	<td><b><%=comment.user.email%></b><br>
+	<td><b><%=comment.user.user_name%></b><br>
 	<%=comment.content%><br>
 	<%if current_user.id == comment.user_id %>
 		<%= link_to 'Edit', edit_comment_path(comment) %>
