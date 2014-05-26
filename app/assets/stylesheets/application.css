@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+.background 
+{
+	margin-top: 60px;
+}
