@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'member/show'
+
   get 'dashboard/index'
 
   get 'dashboard/main'

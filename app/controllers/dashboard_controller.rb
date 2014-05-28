@@ -14,4 +14,6 @@ class DashboardController < ApplicationController
   def archive
   	@blogposts = Blogpost.order('created_at DESC').offset(10)
   end
+
+  
 end
