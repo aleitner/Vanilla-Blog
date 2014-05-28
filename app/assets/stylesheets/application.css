@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
-.background 
+
+.buttons
 {
-	margin-top: 60px;
+	color:white;
 }

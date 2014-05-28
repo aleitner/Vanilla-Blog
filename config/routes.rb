@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'dashboard/main'
 
+  get 'dashboard/archive'
+
   resources :comments
 
   resources :blogposts

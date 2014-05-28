@@ -18,5 +18,5 @@
 -->
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', dashboard_index_path %> |
+<a href="/dashboard/main/?blogpost_id=<%=@blogpost_id%>">Back</a> |
 <%= link_to 'Destroy', @comment, method: :delete, data: { confirm: 'Are you sure?' } %>

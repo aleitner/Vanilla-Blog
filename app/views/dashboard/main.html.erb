@@ -2,11 +2,13 @@
 	<table class="table table-hover table-condensed">
 	<td><b><%=blogpost.user.user_name%></b><br>
 	<%=blogpost.content%><br>
-		<% if current_user.id == blogpost.user_id%>
-		<%= link_to 'Edit', edit_blogpost_path(blogpost) %>
+	<font size = 1>
+	<% if current_user.id == blogpost.user_id%>
+		<%= link_to 'Edit', edit_blogpost_path(blogpost) %> | <%=blogpost.updated_at%>
 	<%else%>
-
+		<%=blogpost.updated_at%>
 	<%end%>
+	</font>
 	</table>
 <%end%>
 <h2>Comments</h3>
@@ -14,10 +16,19 @@
 	<table class="table table-hover table-condensed">
 	<td><b><%=comment.user.user_name%></b><br>
 	<%=comment.content%><br>
-	<%if current_user.id == comment.user_id %>
-		<%= link_to 'Edit', edit_comment_path(comment) %>
-	<%else%>
+	<font size = 1>
+	<%@blogpost.each do |blogpost|%>
+		<% if current_user.id == blogpost.user_id && current_user.id != comment.user_id%>
+			<%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %> | <%=comment.updated_at%>
+
+		<% elsif current_user.id == comment.user_id %>
+			<%= link_to 'Edit', edit_comment_path(comment) %> | <%=comment.updated_at%>
+
+		<%else%>
+			<%=comment.updated_at%>
+		<%end%>
 	<%end%>
+	</font>
 	</table>
 <%end%>
 <br>
