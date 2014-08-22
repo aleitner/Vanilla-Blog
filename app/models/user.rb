@@ -7,10 +7,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_create :send_welcome_email
+
   validates_presence_of :user_name
   validates_uniqueness_of :user_name
 
-   def full_name
-   	"#{first_name} #{last_name}"
-   end
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def send_welcome_email
+  end
+
 end

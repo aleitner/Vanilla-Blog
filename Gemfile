@@ -36,6 +36,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'devise'
 
+gem 'will_paginate'
 # Use unicorn as the app server
 # gem 'unicorn'
 
