@@ -6,7 +6,7 @@ class DashboardController < ApplicationController
   end
 
   def main
-  	@blogpost_id = params[:blogpost_id]
+  	@blogpost_id = params[:post_id]
     @blogpost = Blogpost.where(id: @blogpost_id)
 
     @comments = Comment.where(blogpost_id: @blogpost_id)

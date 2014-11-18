@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vanilla Blog</title>
+  <title>Vanilla Rocks</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -41,9 +41,9 @@
       </button>
       <% if user_signed_in? %>
       <a class="navbar-brand" href="/dashboard/index/">
-        <%=image_tag("icecream.gif")%>Vanilla Blog</a>
+        <%=image_tag("icecream.gif")%>Vanilla Rocks</a>
       <% else %>
-            <a class="navbar-brand" href="/homepage/index/"><%=image_tag("icecream.gif")%>Vanilla Blog</a>
+            <a class="navbar-brand" href="/homepage/index/"><%=image_tag("icecream.gif")%>Vanilla Rocks</a>
       <% end %>
     </div>
 

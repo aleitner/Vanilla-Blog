@@ -23,9 +23,9 @@ Rails.application.routes.draw do
 
   get 'homepage/contact'
 
-  get 'homepage/splash'
+  # get 'homepage/splash'
 
-  get 'blogposts/mass_comment_count'
+  # get 'blogposts/mass_comment_count'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
