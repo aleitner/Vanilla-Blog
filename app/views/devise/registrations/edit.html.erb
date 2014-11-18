@@ -3,25 +3,25 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :user_name %> <%= f.text_field :user_name, autofocus: true %></div><br>
+  <div class="left"><%= f.label :user_name %></div><div class="right"><%= f.text_field :user_name, autofocus: true %></div><br>
 
-  <div><%= f.label :first_name %> <%= f.text_field :first_name, autofocus: true %></div><br>
+  <div class="left"><%= f.label :first_name %></div><div class="right"><%= f.text_field :first_name, autofocus: true %></div><br>
 
-  <div><%= f.label :last_name %> <%= f.text_field :last_name, autofocus: true %></div><br>
+  <div class="left"><%= f.label :last_name %></div><div class="right"><%= f.text_field :last_name, autofocus: true %></div><br>
 
-  <div><%= f.label :email %> <%= f.email_field :email, autofocus: true %></div><br />
+  <div class="left"><%= f.label :email %></div><div class="right"><%= f.email_field :email, autofocus: true %></div><br />
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div><br / >
+    <div class="left">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div><br / >
   <% end %>
 
-  <div><%= f.label :password %> <%= f.password_field :password, autocomplete: "off" %></div><br />
-  <i>(leave blank if you don't want to change it)</i><br />
+  <div class="left"><%= f.label :password %></div><div class="right"><%= f.password_field :password, autocomplete: "off" %><br />
+  <i>(leave blank if you don't want to change it)</i></div><br />
 
-  <div><%= f.label :password_confirmation %> <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br />
+  <div class="left"><%= f.label :password_confirmation %></div><div class="right"><%= f.password_field :password_confirmation, autocomplete: "off" %></div><br />
 
-  <div><%= f.label :current_password %> <%= f.password_field :current_password, autocomplete: "off" %></div><br />
-  <i>(we need your current password to confirm your changes)</i><br />
+  <div class="left"><%= f.label :current_password %></div><div class="right"><%= f.password_field :current_password, autocomplete: "off" %><br />
+  <i>(we need your current password to confirm your changes)</i></div><br />
 
   <div><%= f.submit "Update" %></div><br />
 <% end %>
