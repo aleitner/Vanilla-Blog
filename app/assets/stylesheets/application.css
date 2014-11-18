@@ -19,12 +19,16 @@
 	color:white;
 }
 .left {
-    width: 30%;
+    width: 45%;
     float: left;
     text-align: right;
 }
 .right {
-    width: 65%;
+    width: 45%;
     margin-left: 10px;
-    float:left;
+    float: left;
+}
+.center {
+	width: 90%;
+	float: left;
 }

@@ -15,19 +15,19 @@
     <div class="left">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div><br / >
   <% end %>
 
-  <div class="left"><%= f.label :password %></div><div class="right"><%= f.password_field :password, autocomplete: "off" %><br />
-  <i>(leave blank if you don't want to change it)</i></div><br />
+  <div class="left"><%= f.label :password %></div><span class="right"><%= f.password_field :password, autocomplete: "off" %></span><br />
+  <div class="left"><i>(leave blank if you don't want to change it)</i></div><br />
 
   <div class="left"><%= f.label :password_confirmation %></div><div class="right"><%= f.password_field :password_confirmation, autocomplete: "off" %></div><br />
 
-  <div class="left"><%= f.label :current_password %></div><div class="right"><%= f.password_field :current_password, autocomplete: "off" %><br />
-  <i>(we need your current password to confirm your changes)</i></div><br />
+  <div class="left"><%= f.label :current_password %></div><span class="right"><%= f.password_field :current_password, autocomplete: "off" %></span><br />
+  <div class="left"><i>(we need your current password to confirm your changes)</i></div><br />
 
-  <div><%= f.submit "Update" %></div><br />
+  <div class="center"><center><%= f.submit "Update" %></center></div><br />
 <% end %>
 <!--
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 -->
-<%= link_to "Back", dashboard_index_path %>
+<div class="center"><center><%= link_to "Back", dashboard_index_path %></center></div>
