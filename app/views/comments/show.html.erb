@@ -7,7 +7,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @comment.content %>
+  <%= @comment.content.html_safe %>
 </p>
 
 <!--
@@ -18,5 +18,5 @@
 -->
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
-<a href="/dashboard/main/?blogpost_id=<%=@post_id%>">Back</a> |
+<a href="/dashboard/main/?post_id=<%=@blogpost_id%>">Back</a> |
 <%= link_to 'Destroy', @comment, method: :delete, data: { confirm: 'Are you sure?' } %>

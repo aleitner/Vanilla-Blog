@@ -1,7 +1,7 @@
 <%@blogpost.each do |blogpost|%>
 	<table class="table table-hover table-condensed">
 	<td><b><%=blogpost.user.user_name%></b><br>
-	<%=blogpost.content%><br>
+	<%=blogpost.content.html_safe%><br>
 	<font size = 1>
 	<% if current_user.id == blogpost.user_id%>
 		<%= link_to 'Edit', edit_blogpost_path(blogpost) %> | <%=blogpost.updated_at%>
